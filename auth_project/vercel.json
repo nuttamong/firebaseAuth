@@ -10,15 +10,11 @@
         "src": "build_file.sh",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "auth_project/static"
+          "distDir": "static"
         }
       }
     ],
     "routes": [
-      {
-        "src": "/static/(.*)",
-        "dest": "/static/$1"
-      },
       {
         "src": "/(.*)",
         "dest": "auth_project/wsgi.py"
