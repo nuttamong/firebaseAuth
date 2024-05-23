@@ -10,7 +10,7 @@
         "src": "build_file.sh",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "static"
+          "distDir": "auth_project/static"
         }
       }
     ],
