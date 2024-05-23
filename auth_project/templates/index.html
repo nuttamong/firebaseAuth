@@ -1,0 +1,110 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    {% comment %} <script src ="{% static 'js/main.js' %}" ></script> {% endcomment %}
+    <title>Login</title>
+</head>
+<body>
+    <div class ="row">
+        <div class="col-md-6 mx-auto p-0">
+            <div class="card">
+    <div class="login-box">
+        <div class="login-snip">
+            {% comment %} {% if request.session.signIn %}
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label> {% endcomment %}
+            {% if request.session.signUp %}
+            <input id="tab-1" type="radio" name="tab" class="sign-in"><label for="tab-1" class="tab">Login</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">Sign Up</label>
+            {% else %}
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+            {% endif %}
+            <div class="login-space">
+                <form action="{% url 'login' %}" method="post" class="login" id="login">
+                    {% csrf_token %}
+                    <div class="group">
+                        <label for="user" class="label">Email</label>
+                        <input id="user" name = "user" type="text" class="input"  placeholder="Enter your email">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        <input id="pass" name="pass" type="password" class="input" data-type="password" placeholder="Enter your password">
+                    </div>
+                    {% comment %} <div class="group">
+                        <input id="check" type="checkbox" class="check" checked>
+                        <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                    </div> {% endcomment %}
+                    {% if messages and request.session.signIn%}
+                    <div class="group">
+                        <div class="alert alert-danger" role="alert">
+                            {% for message in messages %}
+                                {{ message }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="group">
+                        <input class="button" type="submit" value="Sign In">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="group">
+                        <a class="button" href="/repwd/">Forgot password?</a>
+                    </div>
+                    {% comment %} <div class="google-btn">
+                        <div class="google-icon-wrapper">
+                            <img class="google-icon" src="https://www.svgrepo.com/show/475656/google-color.svg"/>
+                        </div>
+                        <a class="btn-text" href=""{% url 'loginWithGoogle' %}"">Sign in with google</a>
+                    </div> {% endcomment %}
+                </form>
+                <form action="{% url 'signUp' %}" method="post" class="sign-up-form" id="sign-up">
+                    {% csrf_token %}
+                    <div class="group">
+                        <label for="user" class="label">Username</label>
+                        <input id="sign-up-user" name="sign-up-user" type="text" class="input" placeholder="Create your username">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        <input id="sign-up-pass" name="sign-up-pass" type="password" class="input" data-type="password" placeholder="Create your password">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Repeat Password</label>
+                        <input id="re-pass" name="re-pass" type="password" class="input" data-type="password" placeholder="Repeat your password" >
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Email Address</label>
+                        <input id="email" name="email" type="text" class="input" placeholder="Enter your email address">
+                    </div>
+                    {% if messages and request.session.signUp%}
+                    <div class="group">
+                        <div class="alert alert-danger" role="alert">
+                            {% for message in messages %}
+                                {{ message }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign Up">
+                    </div>
+                    {% comment %} <div class="hr"></div> {% endcomment %}
+                </form>
+            </div>
+        </div>
+    </div>   
+    </div>
+    </div>
+    </div>
+    
+</body>
+</html>
+{% endblock %}
