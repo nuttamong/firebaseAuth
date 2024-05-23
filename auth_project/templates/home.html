@@ -28,7 +28,7 @@
                 </ul>
             <form action="{% url 'delete' %}" method="post" id="delete" class="d-flex p-2">
                 {% csrf_token %}
-                <button class="btn btn-danger" type="submit">delete account</button>
+                <button class="btn btn-warning" type="submit">delete account</button>
             </form>
             <form action="{% url 'logout' %}" method="post" id="logout" class="d-flex p-2">
                 {% csrf_token %}
