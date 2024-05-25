@@ -168,6 +168,8 @@ color: #b3b3b3;
 	max-width:1050px;
 	min-height:670px;
 	position: relative;
+	display: flex;
+	justify-content: center;
 }
 
 .welcome h1 {
