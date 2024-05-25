@@ -165,6 +165,8 @@ color: #b3b3b3;
 .welcome{
 	width: 100%;
 	margin: auto;
+	max-width: fit-content;
+	min-height: auto;
 	position: relative;
 }
 
@@ -191,7 +193,7 @@ color: #b3b3b3;
 	span:after {
 		content: attr(data-heading);
 		position: absolute;
-		overflow: hidden;
+		/* overflow: hidden; */
 		left: 0;
 		top: 0;
 		text-shadow: none;
