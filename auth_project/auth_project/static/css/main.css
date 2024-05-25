@@ -169,7 +169,7 @@ color: #b3b3b3;
 	text-align: center;
 	font-weight: normal;
 	line-height: 1;
-	margin: 0;
+	margin: auto;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -184,7 +184,7 @@ color: #b3b3b3;
 	span:before,
 	span:after {
 		content: attr(data-heading);
-		position: relative;
+		position: absolute;
 		overflow: hidden;
 		left: 0;
 		top: 0;
