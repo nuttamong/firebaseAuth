@@ -165,8 +165,8 @@ color: #b3b3b3;
 .welcome{
 	width: 100%;
 	margin: auto;
-	min-width: fit-content;
-	min-height: fit-content;
+	/* min-width: fit-content;
+	min-height: fit-content; */
 	position: relative;
 }
 
