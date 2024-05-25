@@ -173,7 +173,7 @@ color: #b3b3b3;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	position: absolute;
+	position: relative;
 	color: #a2adff;
 	letter-spacing: 1rem;
 	width: 100%;
