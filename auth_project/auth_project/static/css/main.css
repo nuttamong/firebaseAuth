@@ -187,7 +187,7 @@ color: #b3b3b3;
 		position: absolute;
 		overflow: hidden;
 		left: 0;
-		top: 0;
+		top: 10px;
 		text-shadow: none;
 		width: 100%;
 		font-weight: normal;

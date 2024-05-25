@@ -20,7 +20,7 @@ body{
 	height:100%;
 	position:absolute;
 	padding:90px 70px 50px 70px;
-	background:rgba(149, 206, 206, 0.9);
+	background:rgba(0, 77, 77,.9);
 }
 
 .login-snip .login,
@@ -187,7 +187,7 @@ color: #b3b3b3;
 		position: absolute;
 		overflow: hidden;
 		left: 0;
-		top: 0;
+		top: 10px;
 		text-shadow: none;
 		width: 100%;
 		font-weight: normal;
