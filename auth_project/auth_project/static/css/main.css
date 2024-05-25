@@ -164,9 +164,9 @@ color: #b3b3b3;
 
 .welcome{
 	width: 100%;
-	/* margin: auto; */
+	margin: auto;
 	max-width:1050px;
-	min-height:670px;
+	min-height:600px;
 	position: relative;
 }
 
